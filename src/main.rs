@@ -1,27 +1,28 @@
-#![forbid(unsafe_code)]
-//! A simple hello world application
-//!
-//! This app demonstrates:
-//! - The effect of printing to stdout and stderr.
-//! - How to configure logging and the effect of logging at various levels.
+use crate::{
+    actors::{mqtt_broker::MqttBroker, mqtt_client::MqttClient},
+    configuration::read_config,
+};
 
-use log::{debug, error, info, trace, warn};
+mod actors;
+mod configuration;
 
-fn main() {
-    eprintln!("Hello stderr!");
-    println!("Hello stdout!");
+pub mod broker;
+pub mod client;
+pub mod hush;
+mod state;
+
+#[tokio::main]
+async fn main() {
+    // TODO: Consider finding a way to filter the excessively verbose logs from paho-mqtt.
     acap_logging::init_logger();
-    trace!("Hello trace!");
-    debug!("Hello debug!");
-    info!("Hello info!");
-    warn!("Hello warn!");
-    error!("Hello error!");
-}
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn tautology() {
-        println!("This will always pass")
-    }
+    let app_state = state::AppState::new(read_config().unwrap());
+
+    let mqtt_broker = MqttBroker::from_app_state(app_state.clone()).run();
+    let mqtt_client = MqttClient::from_app_state(app_state.clone()).run();
+
+    tokio::select!(
+        r = mqtt_broker => r.unwrap(),
+        r = mqtt_client => r.unwrap(),
+    );
 }

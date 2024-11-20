@@ -3,6 +3,7 @@
     "acapPackageConf": {
         "setup": {
             "appName": "mqtt_logger",
+            "vendor": " ",
             "runMode": "never",
             "version": "0.1.0"
         }

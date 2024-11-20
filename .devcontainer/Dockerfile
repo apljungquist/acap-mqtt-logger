@@ -22,6 +22,7 @@ RUN apt-get update \
     build-essential \
     ca-certificates \
     clang \
+    cmake \
     curl \
     g++-aarch64-linux-gnu \
     g++-arm-linux-gnueabihf \
@@ -60,6 +61,9 @@ RUN curl \
      cargo-acap-build \
      cargo-acap-sdk \
      device-manager \
+  && cargo install \
+     --locked \
+     cargo-about@0.6.2 \
   && rm rust-toolchain.toml
 
 ENV \

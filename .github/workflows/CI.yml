@@ -17,4 +17,8 @@ jobs:
         run: |
           devcontainer up --workspace-folder .
           devcontainer exec --workspace-folder . make --always-make check_all
-          devcontainer exec --workspace-folder . cargo-acap-build --target aarch64
+          devcontainer exec --workspace-folder . cargo-acap-build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 'artifacts'
+          path: target/acap/*.eap
