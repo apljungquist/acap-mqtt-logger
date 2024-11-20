@@ -10,7 +10,7 @@
 # Keep in sync with both
 # - `acapPackageConf.setup.appName` in `manifest.json`
 # - `package.name` in `Cargo.toml`
-export AXIS_PACKAGE ?= hello_world
+export AXIS_PACKAGE ?= mqtt_logger
 
 # The architecture that will be assumed when interacting with the device.
 export AXIS_DEVICE_ARCH ?= aarch64
