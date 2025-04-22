@@ -97,7 +97,18 @@ fix_lint:
 ## =====
 
 sizes.txt:
-	cargo-acap-build -- --release
+	for t in aarch64-unknown-linux-gnu thumbv7neon-unknown-linux-gnueabihf; do \
+		CARGO_PROFILE_RELEASE_OPT_LEVEL="s" \
+		CARGO_PROFILE_RELEASE_STRIP="symbols" \
+		CARGO_PROFILE_RELEASE_LTO="true" \
+		CARGO_PROFILE_RELEASE_PANIC="abort" \
+		CARGO_PROFILE_RELEASE_CODEGEN_UNITS="1" \
+		RUSTFLAGS="-Zlocation-detail=none -Zfmt-debug=none" \
+		cargo +nightly build \
+			--target=$$t \
+			--release -Zbuild-std=panic_abort,std \
+			-Zbuild-std-features=panic_immediate_abort,optimize_for_size; \
+	done
 	du \
 		--apparent-size \
 		--human-readable \
