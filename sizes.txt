@@ -1,5 +1,5 @@
-191K	target/aarch64/tiny_app/tiny_app_0_1_0_aarch64.eap
+186K	target/aarch64/tiny_app/tiny_app_0_1_0_aarch64.eap
 387K	target/aarch64/tiny_app/tiny_app
-172K	target/armv7hf/tiny_app/tiny_app_0_1_0_armv7hf.eap
-266K	target/armv7hf/tiny_app/tiny_app
-1015K	total
+168K	target/armv7hf/tiny_app/tiny_app_0_1_0_armv7hf.eap
+258K	target/armv7hf/tiny_app/tiny_app
+998K	total
