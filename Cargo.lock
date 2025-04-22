@@ -206,7 +206,6 @@ name = "tiny_app"
 version = "0.1.0"
 dependencies = [
  "acap-logging",
- "log",
 ]
 
 [[package]]
