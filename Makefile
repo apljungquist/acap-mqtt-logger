@@ -98,7 +98,6 @@ fix_lint:
 
 sizes.txt:
 	cargo-acap-build -- --release
-	cargo build --release --target x86_64-unknown-linux-gnu
 	du \
 		--apparent-size \
 		--human-readable \
@@ -107,7 +106,6 @@ sizes.txt:
 		target/aarch64/tiny_app/tiny_app \
 		target/armv7hf/tiny_app/tiny_app_0_1_0_armv7hf.eap \
 		target/armv7hf/tiny_app/tiny_app \
-		target/x86_64-unknown-linux-gnu/release/tiny_app \
 	> $@
 
 .PHONY: sizes.txt
