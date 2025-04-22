@@ -103,7 +103,7 @@ sizes.txt:
 		CARGO_PROFILE_RELEASE_LTO="true" \
 		CARGO_PROFILE_RELEASE_PANIC="abort" \
 		CARGO_PROFILE_RELEASE_CODEGEN_UNITS="1" \
-		RUSTFLAGS="-Zlocation-detail=none -Zfmt-debug=none" \
+		RUSTFLAGS="-Zlocation-detail=none -Zfmt-debug=none -Clink-args=-lc" \
 		cargo +nightly build \
 			--target=$$t \
 			--release -Zbuild-std=panic_abort,std \
