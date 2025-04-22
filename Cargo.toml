@@ -5,8 +5,6 @@ edition = "2021"
 publish = false
 
 [dependencies]
-acap-logging = { version = "0.1.0", default-features = false }
-log = { version = "0.4.22", features = ["release_max_level_error"] }
 
 [profile.release]
 opt-level = "s"
