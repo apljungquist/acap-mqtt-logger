@@ -10,7 +10,7 @@
 # Keep in sync with both
 # - `acapPackageConf.setup.appName` in `manifest.json`
 # - `package.name` in `Cargo.toml`
-export AXIS_PACKAGE ?= mqtt_logger
+export AXIS_PACKAGE ?= tiny_app
 
 # The architecture that will be assumed when interacting with the device.
 export AXIS_DEVICE_ARCH ?= aarch64
@@ -95,3 +95,19 @@ fix_lint:
 
 ## Nouns
 ## =====
+
+sizes.txt:
+	cargo-acap-build -- --release
+	cargo build --release --target x86_64-unknown-linux-gnu
+	du \
+		--apparent-size \
+		--human-readable \
+		--total \
+		target/aarch64/tiny_app/tiny_app_0_1_0_aarch64.eap \
+		target/aarch64/tiny_app/tiny_app \
+		target/armv7hf/tiny_app/tiny_app_0_1_0_armv7hf.eap \
+		target/armv7hf/tiny_app/tiny_app \
+		target/x86_64-unknown-linux-gnu/release/tiny_app \
+	> $@
+
+.PHONY: sizes.txt

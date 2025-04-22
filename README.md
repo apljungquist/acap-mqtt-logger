@@ -1,23 +1,16 @@
-# MQTT Logger
+# Tiny App
 
-Simple ACAP app for testing MQTT related features.
+Previous work:
+- 46318837614150e0c8709bce2651b23f40576f89
+  - Sizes (`x86_64-unknown-linux-gnu`)
+    - 7.7M artifacts/baseline/hello_world ()
+    - 720K artifacts/release/hello_world
+    - 420K artifacts/stable/hello_world
+    - 116K artifacts/unstable/hello_world
+    - 116K artifacts/unstable2/hello_world
+    - 112K artifacts/unstable3/hello_world
+    - 108K artifacts/unstable4/hello_world
+- da6446e7ef056b38d8a301840760e2f97926441f
 
-> [!IMPORTANT]
-> `mosquitto` is not part of the ACAP SDK and may be removed at any time.
-
-## Usage
-
-Configure the MQTT Client like:
-
-<!-- TODO: Don't use hard coded secrets -->
-- Host: `<AXIS_DEVICE_IP>` (neither `localhost` nor `127.0.0.1` are accepted).
-- Protocol: `MQTT over SSL`
-- Port: `8884`
-- Username: `d7a3407e-f275-4137-8530-1868d9aab6b5`
-- Password: `683ee671c6db83a31c0600f10eaf28d067de9600`
-
-## Compatibility
-
-Tested on:
-- OS: 12.1
-- Hardware: M4216-V
+Not 100% sure what I tested last time,
+but 716K seems close enough to 720K that I'll assume we have reproduced the release build.

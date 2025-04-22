@@ -90,8 +90,6 @@ ENV \
 # download crates to this directory. If launched with the `--user` option then this will fail.
 # TODO: Replace the example in the README with something that does not mount any volumes.
 RUN mkdir /.cargo \
- && chmod a+w /.cargo/
-
-# TODO: Consider removing the content of `CARGO_HOME` instead of `chmod`ing it;
-RUN find $CARGO_HOME $RUSTUP_HOME -type d -exec chmod a+rwx {} +
-RUN find $CARGO_HOME $RUSTUP_HOME -type f -exec chmod a+rw {} +
+ && chmod a+w /.cargo/ \
+ && find $CARGO_HOME $RUSTUP_HOME -type d -exec chmod a+rwx {} + \
+ && find $CARGO_HOME $RUSTUP_HOME -type f -exec chmod a+rw {} +
