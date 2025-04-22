@@ -11,6 +11,3 @@ Previous work:
     - 112K artifacts/unstable3/hello_world
     - 108K artifacts/unstable4/hello_world
 - da6446e7ef056b38d8a301840760e2f97926441f
-
-Not 100% sure what I tested last time,
-but 716K seems close enough to 720K that I'll assume we have reproduced the release build.

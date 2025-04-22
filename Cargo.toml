@@ -7,3 +7,9 @@ publish = false
 [dependencies]
 acap-logging = { version = "0.1.0" }
 log = "0.4.22"
+
+[profile.release]
+opt-level = "s"
+strip = "symbols"
+lto = true
+codegen-units = 1
