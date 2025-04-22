@@ -102,10 +102,8 @@ sizes.txt:
 		--apparent-size \
 		--human-readable \
 		--total \
-		target/aarch64/tiny_app/tiny_app_0_1_0_aarch64.eap \
-		target/aarch64/tiny_app/tiny_app \
-		target/armv7hf/tiny_app/tiny_app_0_1_0_armv7hf.eap \
-		target/armv7hf/tiny_app/tiny_app \
+		target/aarch64-unknown-linux-gnu/release/tiny_app \
+		target/thumbv7neon-unknown-linux-gnueabihf/release/tiny_app \
 	> $@
 
 .PHONY: sizes.txt

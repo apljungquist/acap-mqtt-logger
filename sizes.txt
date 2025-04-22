@@ -1,5 +1,3 @@
-141K	target/aarch64/tiny_app/tiny_app_0_1_0_aarch64.eap
-323K	target/aarch64/tiny_app/tiny_app
-130K	target/armv7hf/tiny_app/tiny_app_0_1_0_armv7hf.eap
-194K	target/armv7hf/tiny_app/tiny_app
-786K	total
+323K	target/aarch64-unknown-linux-gnu/release/tiny_app
+194K	target/thumbv7neon-unknown-linux-gnueabihf/release/tiny_app
+517K	total
