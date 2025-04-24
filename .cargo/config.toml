@@ -1,0 +1,25 @@
+[env]
+CC_aarch64_unknown_linux_gnu = "aarch64-linux-gnu-gcc"
+CXX_aarch64_unknown_linux_gnu = "aarch64-linux-gnu-g++"
+PKG_CONFIG_LIBDIR_aarch64_unknown_linux_gnu = "/opt/axis/acapsdk/sysroots/aarch64/usr/lib/pkgconfig:/opt/axis/acapsdk/sysroots/aarch64/usr/share/pkgconfig"
+PKG_CONFIG_PATH_aarch64_unknown_linux_gnu = "/opt/axis/acapsdk/sysroots/aarch64/usr/lib/pkgconfig:/opt/axis/acapsdk/sysroots/aarch64/usr/share/pkgconfig"
+PKG_CONFIG_SYSROOT_DIR_aarch64_unknown_linux_gnu = "/opt/axis/acapsdk/sysroots/aarch64"
+
+CC_thumbv7neon_unknown_linux_gnueabihf = "arm-linux-gnueabihf-gcc"
+CXX_thumbv7neon_unknown_linux_gnueabihf = "arm-linux-gnueabihf-g++"
+PKG_CONFIG_LIBDIR_thumbv7neon_unknown_linux_gnueabihf = "/opt/axis/acapsdk/sysroots/armv7hf/usr/lib/pkgconfig:/opt/axis/acapsdk/sysroots/armv7hf/usr/share/pkgconfig"
+PKG_CONFIG_PATH_thumbv7neon_unknown_linux_gnueabihf = "/opt/axis/acapsdk/sysroots/armv7hf/usr/lib/pkgconfig:/opt/axis/acapsdk/sysroots/armv7hf/usr/share/pkgconfig"
+PKG_CONFIG_SYSROOT_DIR_thumbv7neon_unknown_linux_gnueabihf = "/opt/axis/acapsdk/sysroots/armv7hf"
+
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"
+rustflags = ["-Clink-args=-lc", "-Clink-args=--sysroot=/opt/axis/acapsdk/sysroots/aarch64"]
+
+[target.armv7-unknown-linux-gnueabihf]
+linker = "arm-linux-gnueabihf-gcc"
+rustflags = ["-Clink-args=-lc", "link-args=--sysroot=/opt/axis/acapsdk/sysroots/armv7hf"]
+
+[target.thumbv7neon-unknown-linux-gnueabihf]
+linker = "arm-linux-gnueabihf-gcc"
+rustflags = ["-Clink-args=-lc", "link-args=--sysroot=/opt/axis/acapsdk/sysroots/armv7hf"]
+

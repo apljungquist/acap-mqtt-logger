@@ -1,0 +1,10 @@
+[package]
+name = "hello-logging"
+version = "0.1.0"
+edition.workspace = true
+
+[dependencies]
+acap-logging = { workspace = true, features = ["default"] }
+# Previously acap-logging did not disable default features for this crate
+env_logger = { workspace = true, default-features = true }
+log = { workspace = true, default-features = true }

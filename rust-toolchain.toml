@@ -1,7 +1,8 @@
 [toolchain]
-channel = "1.80.1"
-components = ["cargo", "clippy", "rustfmt"]
+channel = "nightly" # Cannot find crate std when this is pinned to specific date
+components = ["cargo", "clippy", "rustfmt", "rust-src", "rust-std"]
 targets = [
     "aarch64-unknown-linux-gnu",
     "thumbv7neon-unknown-linux-gnueabihf",
+    "armv7-unknown-linux-gnueabihf",
 ]

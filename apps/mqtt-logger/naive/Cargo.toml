@@ -1,0 +1,17 @@
+[package]
+name = "mqtt-logger"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+acap-dirs = { workspace = true }
+acap-logging = { workspace = true }
+anyhow = { workspace = true }
+futures = { workspace = true }
+log = { workspace = true }
+paho-mqtt = { workspace = true, features = ["bundled", "ssl"] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["std"] }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "time"] }
