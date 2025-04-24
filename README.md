@@ -24,6 +24,20 @@ Previous work:
             * Q: What common functions can we replace with glib, etc on no-std?
 * Differences between armv7hf targets?
 * Differences between targets?
+* Are symbols even useful if panic=abort?
+* Does building the standard library with `trim-paths` improve size?
+    * Or https://doc.rust-lang.org/beta/unstable-book/compiler-flags/location-detail.html
+* Evaluate `µfmt`
+
+Optimizing rust binaries and libraries for size is different from optimizing them for ergonomics and speed.
+Some good techniques are described in https://web.archive.org/web/20250108214641/https://dl.acm.org/doi/pdf/10.1145/3519941.3535075#expand
+The big list items, panic data and formatting can probably be addressed with unstable compiler options:
+`fmt-debug=none` and `build-std-features=panic_immediate_abort` respectively. 
+This ignores one of Rust's best features; its ecosystem.
+For larger applications I speculate that macro optimizations are more important than the micro optimizations discussed in the aforementioned paper.
+The article mentions that "inline-threshold=7 produces substantially smaller binaries in several embedded projects";
+I have not heard about this technique before.
+
 -->
 
 # Results
